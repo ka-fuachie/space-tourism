@@ -1,12 +1,38 @@
 /*--------------------*/
-/* Utility classes    */
+/* Custom variables   */
 /*--------------------*/
 
 :root{
   --clr-dark: 230 35% 7%;
   --clr-light: 231 77% 90%;
   --clr-white: 0 0% 100%;
+
+  --ff-serif: 'Bellefair', serif;
+  --ff-sans: 'Barlow', sans-serif;
+  --ff-sans-cond: 'Barlow Condensed', sans-serif;
+
+  --fs-900: 9.375rem;
+  --fs-800: 6.25rem;
+  --fs-700: 3.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1rem;
+  --fs-300: 0.875rem;
 }
+
+
+/*--------------------*/
+/* Utility classes    */
+/*--------------------*/
+
+.troubleshoot-r * {
+  border: 1px solid red;
+}
+
+.troubleshoot-g * {
+  border: 1px solid green;
+}
+
 
 .flex{
   display: flex;
@@ -39,6 +65,46 @@
 
 .bg-white{
   background-color: hsl(var(--clr-white))
+}
+
+.ff-serif{
+  font-family: var(--ff-serif);
+}
+
+.ff-sans{
+  font-family: var(--ff-sans);
+}
+
+.ff-sans-cond{
+  font-family: var(--ff-sans-cond);
+}
+
+.fs-900{
+  font-size: var(--fs-900);
+}
+
+.fs-800{
+  font-size: var(--fs-800);
+}
+
+.fs-700{
+  font-size: var(--fs-700);
+}
+
+.fs-600{
+  font-size: var(--fs-600);
+}
+
+.fs-500{
+  font-size: var(--fs-500);
+}
+
+.fs-400{
+  font-size: var(--fs-400);
+}
+
+.fs-300{
+  font-size: var(--fs-300);
 }
 
 .uppercase{
