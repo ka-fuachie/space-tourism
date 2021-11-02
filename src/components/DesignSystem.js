@@ -1,9 +1,14 @@
+import LargeBtn from "./LargeBtn"
+import NavBar, {NavEement} from "./NavBar"
+import TabBar from "./TabBar"
+import SliderBar from "./SliderBar"
+
 const DesignSystem = () => {
 
     // Color display card component
     const ColorCard = ({ hex, rgb, hsl, style }) => {
         return (
-            <div className="text-white uppercase flow" style={{ flex: 1 }}>
+            <div className="text-white ff-serif uppercase flow" style={{ flex: 1 }}>
                 <div className={`${style} flex`} style={{
                     border: '1px solid white',
                     height: '5rem',
@@ -12,21 +17,21 @@ const DesignSystem = () => {
                 }}>
                     <p>{hex}</p>
                 </div>
-                <p><span className="text-light" style={{ marginRight: "2em" }}>rgb</span> {rgb}</p>
-                <p><span className="text-light" style={{ marginRight: "2em" }}>hsl</span> {hsl}</p>
+                <p><span className="text-light ff-sans" style={{ marginRight: "2em" }}>rgb</span> {rgb}</p>
+                <p><span className="text-light ff-sans" style={{ marginRight: "2em" }}>hsl</span> {hsl}</p>
             </div>
         )
     }
 
     return (
-        <div className="container bg-dark flow text-white" style={{
+        <div className="container bg-dark flow text-white body-text" style={{
             paddingBlock: '3em',
         }}>
-            <h1 className="uppercase" >Design system</h1>
+            <h1 className="uppercase ff-serif fs-700" >Design system</h1>
 
             {/* Colors */}
-            <div>
-                <h2 className="uppercase">01 colors</h2>
+            <div className="flow">
+                <h2 className="numbered-title"><span>01</span>colors</h2>
                 <div className="flex">
                     <ColorCard
                         hex="#0b0d17"
@@ -51,20 +56,36 @@ const DesignSystem = () => {
 
             {/* Typography */}
             <div className="flow">
-                <h2 className="uppercase">02 typography</h2>
-                <div className="uppercase">
-                    <h1 className="ff-serif fs-900">Earth</h1>
-                    <h2 className="ff-serif fs-800">Venus</h2>
-                    <h3 className="ff-serif fs-700">{"Jupiter & saturn"}</h3>
-                    <h4 className="ff-serif fs-600">{"Uranus, neptune & pluto"}</h4>
-                    <h5 className="ff-sans-cond fs-500 text-light" style={{letterSpacing: "0.3rem"}}>So you want to travel to space</h5>
+                <h2 className="numbered-title"><span>02</span>typography</h2>
+                <div className="flex" style={{gap: "1em"}}>
+                    <div className="uppercase" style={{flex: 1}}>
+                        <h1 className="heading-1">Earth</h1>
+                        <h2 className="heading-2">Venus</h2>
+                        <h3 className="heading-3">{"Jupiter & saturn"}</h3>
+                        <h4 className="heading-4">{"Uranus, neptune & pluto"}</h4>
+                        <h5 className="heading-5">So you want to travel to space</h5>
+                    </div>
+                    <div className="flow" style={{flex: 1}}>
+                        <h6 className="sub-heading-1">384,400 km</h6>
+                        <h6 className="sub-heading-2">Avg. distance</h6>
+                        <p className="nav-text">Europa</p>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. </p>
+                    </div>
                 </div>
-                <div className="flow">
-                    <h6 className="ff-serif fs-500 uppercase">384,400 km</h6>
-                    <h6 className="ff-sans-cond fs-300 uppercase" style={{letterSpacing: "0.15rem"}}>Avg. distance</h6>
-                    <p className="ff-sans-cond fs-400 uppercase" style={{letterspacing: "0.17rem"}}>Europa</p>
-                    <p className="ff-sans fs-400">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. </p>
-                </div>
+            </div>
+
+            {/* Interactive elements */}
+            <div className="flow">
+                <h2 className="numbered-title"><span>03</span>interactive elements</h2>
+                <NavBar>
+                    <NavEement href="#" className="active"><span>01</span>active</NavEement>
+                    <NavEement href="#"><span>02</span>hover</NavEement>
+                    <NavEement href="#"><span>03</span>idle</NavEement>
+                </NavBar>
+                <TabBar/>
+                <LargeBtn/>
+                <SliderBar type="dot" />
+                <SliderBar />
             </div>
 
         </div>
