@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+/*--------------------*/
+/* Utility classes    */
+/*--------------------*/
+
+:root{
+  --clr-dark: 230 35% 7%;
+  --clr-light: 231 77% 90%;
+  --clr-white: 0 0% 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: var(--gap, 0.5em)
 }
 
-.App-link {
-  color: #61dafb;
+.container{
+  padding-inline: 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-dark{
+  color: hsl(var(--clr-dark))
+}
+
+.text-light{
+  color: hsl(var(--clr-light))
+}
+
+.text-white{
+  color: hsl(var(--clr-white))
+}
+
+.bg-dark{
+  background-color: hsl(var(--clr-dark))
+}
+
+.bg-light{
+  background-color: hsl(var(--clr-light))
+}
+
+.bg-white{
+  background-color: hsl(var(--clr-white))
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
+.flow > *:where(:not(:first-child)){
+  margin-top: var(--flow-gap, 1em);
 }
