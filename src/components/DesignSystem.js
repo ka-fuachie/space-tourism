@@ -1,15 +1,15 @@
 import LargeBtn from "./LargeBtn"
-import NavBar, {NavEement} from "./NavBar"
+import NavBar, {NavElement} from "./NavBar"
 import TabBar from "./TabBar"
 import SliderBar from "./SliderBar"
 
 const DesignSystem = () => {
 
     // Color display card component
-    const ColorCard = ({ hex, rgb, hsl, style }) => {
+    const ColorCard = ({ hex, rgb, hsl, className }) => {
         return (
             <div className="text-white ff-serif uppercase flow" style={{ flex: 1 }}>
-                <div className={`${style} flex`} style={{
+                <div className={`${className} flex`} style={{
                     border: '1px solid white',
                     height: '5rem',
                     padding: '1rem',
@@ -26,6 +26,7 @@ const DesignSystem = () => {
     return (
         <div className="container bg-dark flow text-white body-text" style={{
             paddingBlock: '3em',
+            boxSizing: 'content-box',
         }}>
             <h1 className="uppercase ff-serif fs-700" >Design system</h1>
 
@@ -37,19 +38,19 @@ const DesignSystem = () => {
                         hex="#0b0d17"
                         rgb="11, 13, 23"
                         hsl="230, 35%, 7%"
-                        style="text-white bg-dark"
+                        className="text-white bg-dark"
                     />
                     <ColorCard
                         hex="#dod6f9"
                         rgb="208, 214, 249"
                         hsl="231, 77%, 90%"
-                        style="text-dark bg-light"
+                        className="text-dark bg-light"
                     />
                     <ColorCard
                         hex="#ffffff"
                         rgb="255, 255, 255"
                         hsl="0, 0%, 100%"
-                        style="text-dark bg-white"
+                        className="text-dark bg-white"
                     />
                 </div>
             </div>
@@ -77,11 +78,11 @@ const DesignSystem = () => {
             {/* Interactive elements */}
             <div className="flow">
                 <h2 className="numbered-title"><span>03</span>interactive elements</h2>
-                <NavBar>
-                    <NavEement href="#" className="active"><span>01</span>active</NavEement>
-                    <NavEement href="#"><span>02</span>hover</NavEement>
-                    <NavEement href="#"><span>03</span>idle</NavEement>
-                </NavBar>
+                {/* <NavBar>
+                    <NavElement href="#" className="active"><span>01</span>active</NavElement>
+                    <NavElement href="#"><span>02</span>hover</NavElement>
+                    <NavElement href="#"><span>03</span>idle</NavElement>
+                </NavBar> */}
                 <TabBar/>
                 <LargeBtn/>
                 <SliderBar type="dot" />

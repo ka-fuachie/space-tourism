@@ -5,9 +5,9 @@ const SliderBar = ({ type }) => {
         <>
             {type === 'dot' ?
                 <div className="dot-slider">
-                    <button aria-selected="true"></button>
-                    <button></button>
-                    <button></button>
+                    <button aria-selected="true"><span className="sr-only">item</span></button>
+                    <button><span className="sr-only">item</span></button>
+                    <button><span className="sr-only">item</span></button>
                 </div>
                 :
                 <div className="numbered-slider heading-4">
