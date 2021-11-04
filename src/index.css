@@ -27,6 +27,14 @@ time, mark, audio, video{
 	font:inherit;
 }
 
+/* body,
+#root,
+.App,
+.App > * {
+	display: flex;
+	flex: 1;
+} */
+
 ol, ul {
 	list-style: none;
 }

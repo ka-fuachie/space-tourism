@@ -78,11 +78,11 @@ const DesignSystem = () => {
             {/* Interactive elements */}
             <div className="flow">
                 <h2 className="numbered-title"><span>03</span>interactive elements</h2>
-                {/* <NavBar>
+                <NavBar>
                     <NavElement href="#" className="active"><span>01</span>active</NavElement>
                     <NavElement href="#"><span>02</span>hover</NavElement>
                     <NavElement href="#"><span>03</span>idle</NavElement>
-                </NavBar> */}
+                </NavBar>
                 <TabBar/>
                 <LargeBtn/>
                 <SliderBar type="dot" />

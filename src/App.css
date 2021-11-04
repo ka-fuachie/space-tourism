@@ -16,8 +16,35 @@
   --fs-700: 3.5rem;
   --fs-600: 2rem;
   --fs-500: 1.75rem;
-  --fs-400: 1rem;
-  --fs-300: 0.875rem;
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
+
+  --ls-large: 0.3rem;
+  --ls-medium: 0.17rem;
+  --ls-small: 0.15rem;
+}
+
+@media (max-width: 48rem) {
+  :root{
+    --fs-500: 1.25rem;
+    --fs-400: 1rem;
+    --fs-300: 0.875rem;
+
+    --ls-large: 0.21rem;
+    --ls-medium: 0.15rem;
+  }
+}
+
+@media (max-width: 35rem) {
+  :root{
+    --fs-900: 5rem;
+    --fs-600: 1.25rem;
+    --fs-500: 1rem;
+    --fs-400: 0.94rem;
+
+    --ls-large: 0.17rem;
+  }
 }
 
 
@@ -61,6 +88,9 @@
   border: 0;
 }
 
+.block {
+  display: block;
+}
 
 /* Text color */
 
@@ -137,6 +167,10 @@
   font-size: var(--fs-300);
 }
 
+.fs-200{
+  font-size: var(--fs-200);
+}
+
 /* Font style */
 
 .uppercase{
@@ -174,7 +208,7 @@
   text-transform: uppercase;
   font-family: var(--ff-sans-cond);
   font-size: var(--fs-500);
-  letter-spacing: 0.3rem;
+  letter-spacing: var(--ls-large);
   color:hsl(var(--clr-light))
 }
 
@@ -187,15 +221,15 @@
 .sub-heading-2{
   text-transform: uppercase;
   font-family: var(--ff-sans-cond);
-  font-size: var(--fs-300);
-  letter-spacing: 0.15rem;
+  font-size: var(--fs-200);
+  letter-spacing: var(--ls-small);
 }
 
 .nav-text{
   text-transform: uppercase;
   font-family: var(--ff-sans-cond);
-  font-size: var(--fs-400);
-  letter-spacing: 0.17rem;
+  font-size: var(--fs-300);
+  letter-spacing: var(--ls-medium);
 }
 
 .body-text{
@@ -250,7 +284,6 @@
   --gap: 4em;
   padding-inline: 5em;
   background-color: hsl(var(--clr-white) / 0.1);
-  backdrop-filter: blur(80px);
 }
 
 @media (max-width: 48rem) {
@@ -284,8 +317,17 @@
     --gap: 0.7em;
     padding-top: 8em;
     width: 20em;
+    background-color: hsl(var(--clr-dark) / 0.85);
   }
 }
+
+@supports (backdrop-filter: blur(1px)){
+  #main-navigation .tab-navigation{
+    background-color: hsl(var(--clr-white) / 0.04);
+    backdrop-filter: blur(80px);
+  }
+}
+
 
 .tab-navigation > * {
   padding-block: 1em;
@@ -455,5 +497,63 @@
   .main-header{
     padding: 1.5em;
     justify-content: space-between;
+  }
+}
+
+
+/*--------------------*/
+/* Page layouts       */
+/*--------------------*/
+
+/* Home */
+
+.home{
+  display: flex;
+  flex-direction: column;
+  background-image: url("./assets/home/background-home-desktop.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.home > main{
+  flex: 1;
+}
+
+.home > main > * {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 8em;
+}
+
+.home > main > *:last-child {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+@media (max-width: 48rem) {
+  .home{
+    background-image: url("./assets/home/background-home-tablet.jpg");
+    background-position: bottom;
+  }
+
+  .home > main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home > main > * {
+    flex-direction: column;
+  }
+  
+  .home > main > *:last-child {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 35rem) {
+  .home{
+    background-image: url("./assets/home/background-home-mobile.jpg");
   }
 }
