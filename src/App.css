@@ -27,6 +27,7 @@
 
 @media (max-width: 48rem) {
   :root{
+    --fs-800: 5rem;
     --fs-500: 1.25rem;
     --fs-400: 1rem;
     --fs-300: 0.875rem;
@@ -223,6 +224,7 @@
   font-family: var(--ff-sans-cond);
   font-size: var(--fs-200);
   letter-spacing: var(--ls-small);
+  color:hsl( var(--clr-light));
 }
 
 .nav-text{
@@ -235,6 +237,7 @@
 .body-text{
   font-family: var(--ff-sans);
   font-size: var(--fs-400);
+  color:hsl( var(--clr-light));
 }
 
 
@@ -332,21 +335,20 @@
 .tab-navigation > * {
   padding-block: 1em;
   border-bottom: 2px solid hsl(var(--clr-white) / 0);
+  color:hsl( var(--clr-light));
 }
 
 #main-navigation .tab-navigation > *{
   padding-block: 2em;
+  color:hsl( var(--clr-white));
 }
 
 @media (max-width: 35rem){
-  .tab-navigation > * {
+  #main-navigation .tab-navigation > * {
     border-bottom: 0;
     border-right: 3px solid hsl(var(--clr-white) / 0);
-  }
-  
-  #main-navigation .tab-navigation > *{
     padding-block: 0.8em;
-  }  
+  }
 }
 
 .tab-navigation .numbered-text > span{
@@ -375,6 +377,16 @@
 
 .tab-navigation > .active, 
 .tab-navigation > [aria-selected="true"]{
+  border-color: hsl(var(--clr-white) / 1);
+  color:hsl( var(--clr-white));
+}
+
+#main-navigation .tab-navigation > :hover, 
+#main-navigation .tab-navigation > :focus{
+  border-color: hsl(var(--clr-white) / 0.5);
+}
+
+#main-navigation .tab-navigation > .active {
   border-color: hsl(var(--clr-white) / 1);
 }
 
@@ -505,28 +517,33 @@
 /* Page layouts       */
 /*--------------------*/
 
+/* General */
+.App > * {
+  background-size: cover;
+  background-position: center;
+}
+
+
 /* Home */
 
 .home{
   display: flex;
   flex-direction: column;
   background-image: url("./assets/home/background-home-desktop.jpg");
-  background-size: cover;
-  background-position: center;
 }
 
-.home > main{
+.home > .main{
   flex: 1;
 }
 
-.home > main > * {
+.home > .main > * {
   display: flex;
   flex: 1;
   flex-direction: column;
   padding: 8em;
 }
 
-.home > main > *:last-child {
+.home > .main > *:last-child {
   justify-content: flex-end;
   align-items: flex-end;
 }
@@ -534,19 +551,18 @@
 @media (max-width: 48rem) {
   .home{
     background-image: url("./assets/home/background-home-tablet.jpg");
-    background-position: bottom;
   }
 
-  .home > main {
+  .home > .main {
     flex-direction: column;
     text-align: center;
   }
 
-  .home > main > * {
+  .home > .main > * {
     flex-direction: column;
   }
   
-  .home > main > *:last-child {
+  .home > .main > *:last-child {
     justify-content: center;
     align-items: center;
   }
@@ -555,5 +571,58 @@
 @media (max-width: 35rem) {
   .home{
     background-image: url("./assets/home/background-home-mobile.jpg");
+    background-position: bottom;
   }
+}
+
+/* Destination */
+.destination{
+  flex-direction: column;
+  background-image: url("./assets/destination/background-destination-desktop.jpg");
+}
+
+.destination .main{
+  display: flex;
+}
+
+.destination .main > * {
+  flex: 1;
+  padding: 5em;
+}
+
+.destination .main [role="tabpanel"] > div {
+  display: flex;
+  gap: 5em;
+  padding-block: 2em;
+  border-top: 1px solid hsl( var(--clr-light) /0.24)
+}
+
+@media (max-width: 48rem) {
+  .destination{
+    background-image: url("./assets/destination/background-destination-tablet.jpg");
+  }
+
+  .destination .main{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .destination .main .tab-navigation{
+    justify-content: center;
+  }
+
+  .destination .main [role="tabpanel"] > div {
+    justify-content: center;
+  }  
+}
+
+@media (max-width: 35rem) {
+  .destination{
+    background-image: url("./assets/destination/background-destination-mobile.jpg");
+  }
+
+  .destination .main [role="tabpanel"] > div {
+    flex-direction: column;
+    gap: 2em;
+  }  
 }

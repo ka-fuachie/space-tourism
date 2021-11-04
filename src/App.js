@@ -1,10 +1,12 @@
 import './App.css';
 import HomePage from './pages/HomePage';
+import DestinationPage from './pages/DestinationPage';
 
 function App() {
   return (
-    <div className="App bg-dark text-white body-text">
-      <HomePage />
+    <div className="App bg-dark text-white">
+      {/* <HomePage /> */}
+      <DestinationPage />
     </div>
   );
 }

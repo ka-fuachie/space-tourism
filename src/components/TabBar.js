@@ -1,11 +1,13 @@
-const TabBar = () => {
+const TabBar = ({children}) => {
     return (
         <div role="tablist" className="tab-navigation nav-text text-white">
-            <button role="tab" aria-selected="true">Moon</button>
-            <button role="tab">Mars</button>
-            <button role="tab">Europa</button>
+            {children}
         </div>
     )
+}
+
+export const TabElement = ({children, controls, selected, onClick}) => {
+    return <button role="tab" aria-controls={controls} aria-selected={selected} onClick={() => onClick(children)}>{children}</button>
 }
 
 export default TabBar
