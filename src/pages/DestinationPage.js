@@ -76,7 +76,7 @@ const DestinationPage = () => {
             <main>
                 <h1 className="numbered-title"><span aria-hidden="true">01</span>Pick your destination</h1>
                 <div className="main">
-                    <div>
+                    <div role="tabpanel">
                         <picture>
                             <source srcSet={destinationimage.webp} type="image/webp"/>
                             <img src={destinationimage.png} alt={destinationData.name} />

@@ -20,8 +20,8 @@ export const DotElement = ({children, selected, onClick}) => {
     return <button role="tab" aria-selected={selected} onClick={() => onClick(children)}><span className="sr-only">{children}</span></button>
 }
 
-export const NumberElement = ({children, selected}) => {
-    return <button role="tab" aria-selected={selected}>{children}</button>
+export const NumberElement = ({children, selected, onClick}) => {
+    return <button role="tab" aria-selected={selected} onClick={onClick}>{children}</button>
 }
 
 

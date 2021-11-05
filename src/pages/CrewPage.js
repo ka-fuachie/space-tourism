@@ -74,7 +74,7 @@ const CrewPage = () => {
             <Header active="crew" />
             <main>
                 <h1 className="numbered-title"><span aria-hidden="true">02</span>meet your crew</h1>
-                <div className="main">
+                <div className="main flex">
                     <div className="flow">
                         <div role="tabpanel">
                             <h2 className="heading-4">{crewData.role}</h2>
@@ -93,7 +93,7 @@ const CrewPage = () => {
                             ))}
                         </SliderBar>
                     </div>
-                    <div>
+                    <div role="tabpanel">
                         <picture>
                             <source srcSet={crewImage.webp} type="image/webp" />
                             <img src={crewImage.png} alt={crewData.name} />
