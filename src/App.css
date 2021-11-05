@@ -28,6 +28,8 @@
 @media (max-width: 48rem) {
   :root{
     --fs-800: 5rem;
+    --fs-700: 2.5rem;
+    --fs-600: 1.5rem;
     --fs-500: 1.25rem;
     --fs-400: 1rem;
     --fs-300: 0.875rem;
@@ -40,6 +42,7 @@
 @media (max-width: 35rem) {
   :root{
     --fs-900: 5rem;
+    --fs-700: 1.5rem;
     --fs-600: 1.25rem;
     --fs-500: 1rem;
     --fs-400: 0.94rem;
@@ -625,4 +628,57 @@
     flex-direction: column;
     gap: 2em;
   }  
+}
+
+/* Crew */
+.crew{
+  flex-direction: column;
+  background-image: url("./assets/crew/background-crew-desktop.jpg");
+}
+
+.crew .main{
+  display: flex;
+}
+
+.crew .main > * {
+  flex: 1;
+  padding: 5em;
+}
+
+.crew .main > *:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.crew .main h2 {
+  color:hsl( var(--clr-white) /0.5)
+}
+
+@media (max-width: 48rem) {
+  .crew{
+    background-image: url("./assets/crew/background-crew-tablet.jpg");
+  }
+
+  .crew .main{
+    flex-direction: column;
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 35rem) {
+  .crew{
+    background-image: url("./assets/crew/background-crew-mobile.jpg");
+  }
+
+  .crew .main,
+  .crew .main > *:first-child{
+    flex-direction: column-reverse;
+  }
+
+  .crew .main h2 {
+    font-size: 1rem;
+  }
+  
 }

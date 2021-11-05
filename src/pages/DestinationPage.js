@@ -20,7 +20,7 @@ import europaWebp from '../assets/destination/image-europa.webp'
 
 const DestinationPage = () => {
     const destinations = data.destinations
-    const [destinationData, setDestinationData] = useState([])
+    const [destinationData, setDestinationData] = useState({})
     const [destination, setDestination] = useState('moon')
     const [destinationimage, setDestinationImage] = useState({png:'', webp: ''})
 
