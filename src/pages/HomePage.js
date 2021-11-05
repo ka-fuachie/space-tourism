@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header"
 import LargeBtn from "../components/LargeBtn"
 
 const Homepage = () => {
+    const navigate = useNavigate()
+
     return (
         <div className = "home">
            <Header active="home" />
@@ -18,7 +21,7 @@ const Homepage = () => {
                </div>
                <div>
                    <div>
-                   <LargeBtn>Explore</LargeBtn>
+                   <LargeBtn onClick = {() => navigate("/destination")}>Explore</LargeBtn>
                    </div>
                </div>
            </main>

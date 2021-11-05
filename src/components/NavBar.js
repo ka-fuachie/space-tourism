@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const NavBar = ({children, expanded}) => {
     return (
         <nav id="main-navigation" data-expanded = {expanded}>
@@ -8,9 +10,9 @@ const NavBar = ({children, expanded}) => {
     )
 }
 
-export const NavElement = ({children, className, href}) => {
+export const NavElement = ({children, className, to}) => {
     return (
-        <li className={className}><a href={href} className="numbered-text">{children}</a></li>
+        <li className={className}><Link to={to} className="numbered-text">{children}</Link></li>
     )
 }
 

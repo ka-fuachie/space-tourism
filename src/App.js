@@ -1,4 +1,9 @@
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 import HomePage from './pages/HomePage';
 import DestinationPage from './pages/DestinationPage';
 import CrewPage from './pages/CrewPage';
@@ -10,7 +15,16 @@ function App() {
       {/* <HomePage /> */}
       {/* <DestinationPage /> */}
       {/* <CrewPage /> */}
-      <TechnologyPage />
+      {/* <TechnologyPage /> */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/destination" element={<DestinationPage />} /> 
+          <Route path="/crew" element={<CrewPage/>} />
+          <Route path="/technology" element={<TechnologyPage />} />  
+          <Route path="*" element={<HomePage />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

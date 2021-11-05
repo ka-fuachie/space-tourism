@@ -1,6 +1,6 @@
-const LargeBtn = ({children}) => {
+const LargeBtn = ({children, onClick}) => {
     return (
-        <button className="large-btn text-dark bg-white heading-4">{children}</button>
+        <button className="large-btn text-dark bg-white heading-4" onClick={onClick}>{children}</button>
     )
 }
 
