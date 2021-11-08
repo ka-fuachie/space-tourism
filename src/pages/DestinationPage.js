@@ -82,7 +82,7 @@ const DestinationPage = () => {
                             <img src={destinationimage.png} alt={destinationData.name} />
                         </picture>
                     </div>
-                    <div>
+                    <div className="flow">
                         <TabBar>
                             {
                                 destinations.map((value, index) => {
@@ -99,8 +99,8 @@ const DestinationPage = () => {
                         </TabBar>
                         <div id={`${destinationData.name}-tab`} className="flow" role="tabpanel">
                             <h2 className="heading-2">{destinationData.name}</h2>
-                            <p className="body-text">{destinationData.description}</p>
-                            <div>
+                            <p className="description body-text">{destinationData.description}</p>
+                            <aside>
                                 <div>
                                     <h3 className="sub-heading-2">avg. distance</h3>
                                     <p className="sub-heading-1">{destinationData.distance}</p>
@@ -109,7 +109,7 @@ const DestinationPage = () => {
                                     <h3 className="sub-heading-2">est. travel time</h3>
                                     <p className="sub-heading-1">{destinationData.travel}</p>
                                 </div>
-                            </div>
+                            </aside>
                         </div>
                     </div>
                 </div>
