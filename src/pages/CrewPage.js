@@ -72,11 +72,11 @@ const CrewPage = () => {
     return (
         <div className="crew flex">
             <Header active="crew" />
-            <main>
+            <main className="flex">
                 <h1 className="numbered-title"><span aria-hidden="true">02</span>meet your crew</h1>
                 <div className="main flex">
-                    <div className="flow">
-                        <div role="tabpanel">
+                    <div className="flow flex">
+                        <div role="tabpanel" className="flow">
                             <h2 className="heading-4">{crewData.role}</h2>
                             <h3 className="heading-3">{crewData.name}</h3>
                             <p className="body-text">{crewData.bio}</p>
@@ -93,7 +93,7 @@ const CrewPage = () => {
                             ))}
                         </SliderBar>
                     </div>
-                    <div role="tabpanel">
+                    <div role="tabpanel" className="flex">
                         <picture>
                             <source srcSet={crewImage.webp} type="image/webp" />
                             <img src={crewImage.png} alt={crewData.name} />

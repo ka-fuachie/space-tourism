@@ -464,6 +464,13 @@
   background-color: hsl( var(--clr-white) / 0.15);
 }
 
+@media (max-width: 55rem) {
+  .dot-slider > *{
+    padding: 0.4rem;
+  }  
+}
+
+
 .dot-slider > *:hover,
 .dot-slider > *:focus{
   background-color: hsl( var(--clr-white) / 0.5)
@@ -684,6 +691,7 @@
   .destination main{
     text-align: center;
     padding-inline: clamp(1em, 10vw, 3em);
+    padding-top: 0;
   }
 
   .destination .main > *:first-child img {
@@ -702,19 +710,51 @@
   background-image: url("./assets/crew/background-crew-desktop.jpg");
 }
 
-.crew .main > * {
+.crew main {
+  flex-direction: column;
+  padding-inline: clamp(3em, 7.5vw, 10em);
+  padding-top: 5vh;
+  justify-content: center;
   flex: 1;
-  padding: 5em;
+}
+
+.crew .main{
+  display: flex;
+  padding-top: clamp(2em, 3vh, 5em);
+  justify-content: center;
+  gap: clamp(1em, 2vw, 10em);
+  flex: 1;
 }
 
 .crew .main > *:first-child {
-  display: flex;
+  --flow-gap: clamp(2em, 10vh, 10em);
+  align-self: center;
   flex-direction: column;
+}
+
+.crew .main > *:first-child [role="tabpanel"] {
+  --flow-gap: clamp(0.1em, 2vh, 0.5em)
 }
 
 .crew .main h2 {
   color:hsl( var(--clr-white) /0.5)
 }
+
+.crew .main > *:last-child {
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.crew .main > *:last-child img {
+  height: clamp(20em, 62.5vh, 30em);
+  width: auto;
+}
+
+.crew .main > *:last-child picture{
+  display: flex;
+  align-items: flex-end;
+}
+
 
 @media (max-width: 55rem) {
   .crew{
@@ -724,7 +764,24 @@
   .crew .main{
     flex-direction: column;
     text-align: center;
+    gap: clamp(1em, 5vh, 5em)
   }
+
+  .crew .main > *:first-child {
+    --flow-gap: clamp(1em, 5vh, 5em);
+  }  
+
+  .crew .main > *:first-child [role="tabpanel"] {
+    --flow-gap: clamp(1px, 1vh, 5px);
+  }  
+
+  .crew .main > *:first-child [role="tabpanel"] > p {
+    max-width: 65ch;
+  }  
+
+  .crew .main > *:last-child img {
+    height: clamp(20em, 45vh, 30em);
+  }  
 
 }
 
@@ -733,15 +790,44 @@
     background-image: url("./assets/crew/background-crew-mobile.jpg");
   }
 
-  .crew .main,
+  .crew main{
+    text-align: center;
+    padding-inline: clamp(1em, 10vw, 3em);
+    padding-top: 0;
+  }
+
+  .crew .main{
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: clamp(1em, 3vh, 5em);
+    padding-bottom: 10vh;
+  }
+
   .crew .main > *:first-child{
     flex-direction: column-reverse;
+    --flow-gap: 0;
   }
+
+  .crew .main > *:first-child > *:first-child{
+    margin-top: clamp(1em, 5vh, 5em);
+  }
+
+  .crew .main > *:first-child [role="tabpanel"] > p {
+    max-width: 70ch;
+  }  
 
   .crew .main h2 {
     font-size: 1rem;
   }
-  
+
+  .crew .main > *:last-child {
+    border-bottom: 1px solid hsl( var(--clr-white) / 0.24);
+  }  
+
+  .crew .main > *:last-child img {
+    height: clamp(15em, 35vh, 20em);
+  }  
+
 }
 
 /* Technology */
