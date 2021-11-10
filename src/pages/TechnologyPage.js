@@ -87,8 +87,8 @@ const TechnologyPage = () => {
                     </div>
                     <div className="flex">
                         <picture>
-                            <source srcSet={technologyImage.landscape} media="(max-width: 48rem)" />
-                            <source srcSet={technologyImage.portrait} media="(mim-width: 48rem)" />
+                            <source srcSet={technologyImage.landscape} media="(max-width: 55rem)" />
+                            <source srcSet={technologyImage.portrait} media="(mim-width: 55rem)" />
                             <img src={technologyImage.portrait} alt={technologyData.name} />
                         </picture>
                     </div>

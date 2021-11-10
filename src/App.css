@@ -483,7 +483,7 @@
 .numbered-slider{
   display: flex;
   flex-direction: column;
-  width: 8em;
+  min-width: 3.5rem;
   gap: 1em;
 }
 
@@ -503,6 +503,12 @@
   color: hsl( var(--clr-white));
   border: 1px solid hsl( var(--clr-white) / .25);
   flex-grow: 1;
+}
+
+@media (max-width: 55rem) {
+  .numbered-slider > *{
+    padding-inline: 0.75em;
+  }  
 }
 
 .numbered-slider > *:hover,
@@ -836,25 +842,46 @@
   background-image: url("./assets/technology/background-technology-desktop.jpg");
 }
 
-.technology .main > * {
+.technology main {
+  flex-direction: column;
+  padding-left: clamp(3em, 7.5vw, 10em);
+  padding-top: 5vh;
+  justify-content: center;
   flex: 1;
-  padding: 5em;
-  padding-right: 0;
-  align-items: center;
+}
+
+.technology .main{
+  display: flex;
+  padding-top: clamp(2em, 3vh, 5em);
+  justify-content: space-between;
+  flex: 1;
+  gap: 3em;
 }
 
 .technology .main > *:first-child {
-  gap: 2em
+  gap: 2em;
+  align-items: center;
 }
 
-.technology .main > *:last-child {
-  justify-content: flex-end;
+.technology .main > *:first-child  p{
+  max-width: 45ch;
 }
+
+.technology .main > *:last-child  img{
+  width: auto;
+  height: clamp(40vh, 40vw, 60vh);
+}
+
 
 @media (max-width: 55rem) {
   .technology{
     background-image: url("./assets/technology/background-technology-tablet.jpg");
   }
+
+  .technology main {
+    padding-left: 0;
+    padding-bottom: 10vh;
+  }  
 
   .technology .main{
     flex-direction: column-reverse;
@@ -863,7 +890,19 @@
 
   .technology .main > *:first-child {
     flex-direction: column;
-    padding-inline: 5em;
+  }  
+
+  .technology .main > *:first-child [role = "tabpanel"] > * + * {
+    margin-top: 0.2em;
+  }  
+
+  .technology .main > *:first-child  p{
+    max-width: 50ch;
+  }  
+
+  .technology .main > *:last-child  img{
+    width: 100%;
+    height: auto;
   }  
 
 }
@@ -873,8 +912,13 @@
     background-image: url("./assets/technology/background-technology-mobile.jpg");
   }
 
+  .technology main {
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 5vh;
+  }  
+
   .technology .main > *:first-child {
-    flex-direction: column;
-    padding-inline: 3em;
+    padding-inline: 2em;
   }  
 }
