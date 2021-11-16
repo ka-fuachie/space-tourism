@@ -12,10 +12,6 @@ import TechnologyPage from './pages/TechnologyPage';
 function App() {
   return (
     <div className="App bg-dark text-white">
-      {/* <HomePage /> */}
-      {/* <DestinationPage /> */}
-      {/* <CrewPage /> */}
-      {/* <TechnologyPage /> */}
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />

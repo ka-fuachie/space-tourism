@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import data from "../data.json"
 import Header from "../components/Header"
 import SliderBar, {NumberElement} from "../components/SliderBar"
+import Loading from "../components/Loading"
 
 // Import images
 import vehiclePortrait from '../assets/technology/image-launch-vehicle-portrait.jpg'
@@ -19,6 +20,7 @@ const TechnologyPage = () => {
     const [technology, setTechnology] = useState("launch vehicle")
     const [technologyData, setTechnologyData] = useState({})
     const [technologyImage, setTechnologyImage] = useState({portrait: '', landscape: ''})
+    const [isLoading, setIsLoading] = useState(true)
 
     // Update technology data when technology changes
     useEffect(() => {
@@ -57,6 +59,7 @@ const TechnologyPage = () => {
 
     // Change Tab
     const changeTab = (tab) => {
+        setIsLoading(true)
         setTechnology(tab)
     }
     
@@ -86,11 +89,12 @@ const TechnologyPage = () => {
                         </div>
                     </div>
                     <div className="flex">
-                        <picture>
+                        <picture className={isLoading? "sr-only": ""}>
                             <source srcSet={technologyImage.landscape} media="(max-width: 55rem)" />
                             <source srcSet={technologyImage.portrait} media="(mim-width: 55rem)" />
-                            <img src={technologyImage.portrait} alt={technologyData.name} />
+                            <img src={technologyImage.portrait} alt={technologyData.name} onLoad={()=> setIsLoading(false)} />
                         </picture>
+                        {isLoading && <Loading className="technologyLoaderBg" />}
                     </div>
                 </div>
             </main>

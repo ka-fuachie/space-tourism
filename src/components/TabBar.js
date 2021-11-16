@@ -7,7 +7,7 @@ const TabBar = ({children}) => {
 }
 
 export const TabElement = ({children, controls, selected, onClick}) => {
-    return <button role="tab" aria-controls={controls} aria-selected={selected} onClick={() => onClick(children)}>{children}</button>
+    return <button role="tab" aria-controls={controls} aria-selected={selected} onClick={() => !selected && onClick(children)}>{children}</button>
 }
 
 export default TabBar

@@ -17,11 +17,11 @@ const SliderBar = ({ type, children }) => {
 }
 
 export const DotElement = ({children, selected, onClick}) => {
-    return <button role="tab" aria-selected={selected} onClick={() => onClick(children)}><span className="sr-only">{children}</span></button>
+    return <button role="tab" aria-selected={selected} onClick={() => !selected && onClick(children)}><span className="sr-only">{children}</span></button>
 }
 
 export const NumberElement = ({children, selected, onClick}) => {
-    return <button role="tab" aria-selected={selected} onClick={onClick}>{children}</button>
+    return <button role="tab" aria-selected={selected} onClick={!selected && onClick}>{children}</button>
 }
 
 

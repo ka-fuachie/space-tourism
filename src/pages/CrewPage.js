@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import data from "../data.json"
 import Header from "../components/Header"
 import SliderBar, { DotElement } from "../components/SliderBar"
+import Loading from "../components/Loading"
 
 // Import images
 import commanderPng from '../assets/crew/image-douglas-hurley.png'
@@ -22,6 +23,7 @@ const CrewPage = () => {
     const [crewData, setCrewData] = useState({})
     const [crew, setCrew] = useState('commander')
     const [crewImage, setCrewImage] = useState({ png: '', webp: '' })
+    const [isLoading, setIsLoading] = useState(true)
 
     // Update crew data when crew changes
     useEffect(() => {
@@ -66,6 +68,7 @@ const CrewPage = () => {
 
     // Change Tab
     const changeTab = (tab) => {
+        setIsLoading(true)
         setCrew(tab)
     }
 
@@ -94,10 +97,11 @@ const CrewPage = () => {
                         </SliderBar>
                     </div>
                     <div role="tabpanel" className="flex">
-                        <picture>
+                        <picture className={isLoading? "sr-only": ""}>
                             <source srcSet={crewImage.webp} type="image/webp" />
-                            <img src={crewImage.png} alt={crewData.name} />
+                            <img src={crewImage.png} alt={crewData.name} onLoad={()=> setIsLoading(false)} />
                         </picture>
+                        {isLoading && <Loading className="crewLoaderBg" />}
                     </div>
                 </div>
             </main>
