@@ -908,6 +908,10 @@
     max-width: 50ch;
   }  
 
+  .technology .main > *:last-child  picture {
+    width: 100%;
+  }  
+
   .technology .main > *:last-child  img,
   .technologyLoaderBg{
     width: 100%;
